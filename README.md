@@ -173,3 +173,17 @@ make
 }
 ```
 
+## c_cpp_properties.json
+
+c_cpp_properties.json自动生成步骤，在vscode里，`ctrl+shift+p`打开配置，在命令中输入`configuration`选择`C/C++:Edit Configuration(JSON)`，即可创建c_cpp_properties.json
+
+**c_cpp_properties.json的作用**
+
+参考链接：[笔记-vscode下的c_cpp_properties.json文件配置](https://blog.csdn.net/fdfdsds/article/details/102248876)
+
+**vscode中包含ros.h找不到的问题解决方法**
+
+在c_cpp_properties.json中`"includePath"`项添加`"/opt/ros/melodic/include/**"`
+
+参考链接：[vscode报错 ：无法打开源文件 #include“ros/ros.h“](https://blog.csdn.net/weixin_45723524/article/details/119218014)
+
