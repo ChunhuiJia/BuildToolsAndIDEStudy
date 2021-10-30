@@ -1,5 +1,13 @@
 # CMakeAndIDEStudy
 
+|      更新时间|变更内容      |
+| ---- | ---- |
+| 2021-10-30 | docs文件加中增加CMake中文手册 |
+|      |      |
+|      |      |
+
+
+
 # 1.基于VSCode和CMake实现C/C++开发 | Linux篇
 
 [基于VSCode和CMake实现C/C++开发 | Linux篇-视频（推荐）](https://www.bilibili.com/video/BV1fy4y1b7TC?from=search&seid=17147323456237447809&spm_id_from=333.337.0.0)
