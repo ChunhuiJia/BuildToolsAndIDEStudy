@@ -2,7 +2,9 @@
 
 # 1.Bazel
 
-[参考链接:Bazel overview](https://docs.bazel.build/versions/4.2.2/bazel-overview.html)
+[参考链接:Bazel overview](https://docs.bazel.build/versions/4.2.2/bazel-overview.html),
+
+[(**非常推荐：总结的特别全面**) 参考链接：Bazel学习笔记](https://blog.gmem.cc/bazel-study-note)
 
 ## 简介
 
@@ -585,13 +587,44 @@ cc_test(
 
 
 
+## 4.filegroup
 
+**为一组目标指定一个名字**，你可以从其它规则中方便的引用这组目标。
 
+Bazel鼓励使用filegroup，而不是直接引用目录。Bazel构建系统不能完全了解目录中文件的变化情况，因而文件发生变化时，可能不会进行重新构建。而使用filegroup，即使联用glob，目录中所有文件仍然能够被构建系统正确的监控。[参考链接](https://blog.gmem.cc/bazel-study-note).
 
+示例：
 
+```python
+filegroup(
+    name = "exported_testdata",
+    srcs = glob([
+        "testdata/*.dat",
+        "testdata/logs/**/*.log",
+    ]),
+)
+```
 
+要引用filegroup，只需要使用标签：
 
+```python
+cc_library(
+    name = "my_library",
+    srcs = ["foo.cc"],
+    data = [
+        "//my_package:exported_testdata",
+        "//my_package:mygroup",
+    ],
+)
+```
 
+## 5.glob标签的含义
+
+Glob语法为目标添加多个文件
+
+## 6.copts标签的含义
+
+传递给C++编译命令的参数
 
 
 
